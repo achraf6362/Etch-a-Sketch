@@ -27,6 +27,22 @@ function playAgain() {
   play();
 }
 
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
+function randomColor() {
+  return `rgb(${getRandomInt(256)} ${getRandomInt(256)} ${getRandomInt(256)})`;
+}
+
+/* function randomColor() {
+  let r = Math.floor(Math.random() * 256);
+  let g = Math.floor(Math.random() * 256);
+  let b = Math.floor(Math.random() * 256);
+
+  return `rgb(${r} ${g} ${b})`
+} */
+
 /* [...grid.children].forEach(child => {
   child.addEventListener('mouseenter', (e) => {
     let current = e.currentTarget;
@@ -36,7 +52,8 @@ function playAgain() {
 
 grid.addEventListener('mouseover', (e) => {
   if (e.target !== grid) {
-  e.target.classList.add('hovered');
+    // e.target.classList.add('hovered');
+    e.target.style.backgroundColor = randomColor();
   }
 });
 
@@ -44,7 +61,8 @@ change.addEventListener('click', playAgain);
 
 clear.addEventListener('click', () => {
   [...grid.children].forEach(child => {
-    child.classList.remove('hovered');
+    // child.classList.remove('hovered');
+    child.style.backgroundColor = '';
   });
 });
 
