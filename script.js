@@ -21,19 +21,17 @@ function playAgain() {
   }
 
   gridSize = num;
-  document.documentElement.style.setProperty('--grid-size', num)
+  document.documentElement.style.setProperty('--grid-size', num);
   grid.innerHTML = '';
 
   play();
 }
 
-/* function getRandomInt(max) {
-  return Math.floor(Math.random() * max);
-} */
+const getRandomInt = () => Math.floor(Math.random() * 256);
 
-/* function randomColor() {
-  return `rgb(${getRandomInt(256)} ${getRandomInt(256)} ${getRandomInt(256)})`;
-} */
+function randomColor() {
+  return `rgb(${getRandomInt()} ${getRandomInt()} ${getRandomInt()})`;
+}
 
 /* function randomColor() {
   let r = Math.floor(Math.random() * 256);
@@ -53,7 +51,8 @@ function playAgain() {
 grid.addEventListener('mouseover', (e) => {
   if (e.target !== grid) {
     e.target.classList.add('hovered');
-    // e.target.style.backgroundColor = randomColor();
+    // document.documentElement.style.setProperty('--random-color', randomColor());
+    e.target.style.backgroundColor = randomColor();
 
     if (e.target.style.opacity < 1) {
       e.target.style.opacity = +e.target.style.opacity + 0.1;

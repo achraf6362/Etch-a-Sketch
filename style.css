@@ -1,6 +1,7 @@
 :root {
   --grid-size: 16;
   --grid-width: 600px;
+  /* --random-color: ''; */
 }
 
 html {
@@ -58,6 +59,6 @@ section {
   aspect-ratio: 1;
 }
 
-.hovered {
-  background-color: black;
-}
+/* .hovered {
+  background-color: var(--random-color);
+} */
