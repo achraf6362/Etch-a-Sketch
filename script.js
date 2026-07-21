@@ -50,9 +50,12 @@ function randomColor() {
 
 grid.addEventListener('mouseover', (e) => {
   if (e.target !== grid) {
-    // e.target.classList.add('hovered');
-    // document.documentElement.style.setProperty('--random-color', randomColor());
-    e.target.style.backgroundColor = randomColor();
+    if (!e.target.style.backgroundColor) {
+      // e.target.classList.add('hovered');
+      e.target.style.backgroundColor = randomColor();
+    }
+
+    // e.target.style.backgroundColor = randomColor();
 
     if (e.target.style.opacity < 1) {
       e.target.style.opacity = +e.target.style.opacity + 0.1;
