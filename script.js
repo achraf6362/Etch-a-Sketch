@@ -50,7 +50,7 @@ function randomColor() {
 
 grid.addEventListener('mouseover', (e) => {
   if (e.target !== grid) {
-    e.target.classList.add('hovered');
+    // e.target.classList.add('hovered');
     // document.documentElement.style.setProperty('--random-color', randomColor());
     e.target.style.backgroundColor = randomColor();
 
@@ -64,7 +64,7 @@ change.addEventListener('click', playAgain);
 
 clear.addEventListener('click', () => {
   [...grid.children].forEach(child => {
-    child.classList.remove('hovered');
+    // child.classList.remove('hovered');
     child.style.backgroundColor = '';
     child.style.opacity = '';
   });
