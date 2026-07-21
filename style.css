@@ -58,6 +58,6 @@ section {
   aspect-ratio: 1;
 }
 
-/* .hovered {
+.hovered {
   background-color: black;
-} */
+}

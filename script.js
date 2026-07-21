@@ -31,9 +31,9 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
 
-function randomColor() {
+/* function randomColor() {
   return `rgb(${getRandomInt(256)} ${getRandomInt(256)} ${getRandomInt(256)})`;
-}
+} */
 
 /* function randomColor() {
   let r = Math.floor(Math.random() * 256);
@@ -52,8 +52,12 @@ function randomColor() {
 
 grid.addEventListener('mouseover', (e) => {
   if (e.target !== grid) {
-    // e.target.classList.add('hovered');
-    e.target.style.backgroundColor = randomColor();
+    e.target.classList.add('hovered');
+    // e.target.style.backgroundColor = randomColor();
+
+    if (e.target.style.opacity < 1) {
+      e.target.style.opacity = +e.target.style.opacity + 0.1;
+    }
   }
 });
 
@@ -61,8 +65,9 @@ change.addEventListener('click', playAgain);
 
 clear.addEventListener('click', () => {
   [...grid.children].forEach(child => {
-    // child.classList.remove('hovered');
+    child.classList.remove('hovered');
     child.style.backgroundColor = '';
+    child.style.opacity = '';
   });
 });
 
