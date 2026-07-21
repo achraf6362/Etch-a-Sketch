@@ -27,9 +27,9 @@ function playAgain() {
   play();
 }
 
-function getRandomInt(max) {
+/* function getRandomInt(max) {
   return Math.floor(Math.random() * max);
-}
+} */
 
 /* function randomColor() {
   return `rgb(${getRandomInt(256)} ${getRandomInt(256)} ${getRandomInt(256)})`;
